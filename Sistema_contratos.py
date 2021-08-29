@@ -38,9 +38,9 @@ class Sistema_contratos: # Define a classe "Sistema de contratos"
                 except Exception as E: # Trata os erros
                     sg.popup(E) # Mostra um popup com a mensagem de erro
                     continue
-
-                with open('arquivo.csv', mode='a', encoding='UTF-8') as arquivo: # Abre o arquivo
-                    arquivo.write(contato.contrato) # Escreve os dados no arquivo
+                else:
+                    with open('arquivo.csv', mode='a', encoding='UTF-8') as arquivo: # Abre o arquivo
+                        arquivo.write(contato.contrato) # Escreve os dados no arquivo
                 
                 sg.popup('Contrato salvo !') # Exibe um popup com a mensagem "Contrato salvo!"
 
@@ -60,5 +60,5 @@ class Sistema_contratos: # Define a classe "Sistema de contratos"
         window.close() # Fecha a primeira janela
 
 if __name__ == '__main__': # Verifica se o contexto de execução está no contexto global
-    sistema = Sistema_contratos() # Cria um objetodo tipo "Sistema_contratos"
+    sistema = Sistema_contratos() # Cria um objeto do tipo "Sistema_contratos"
     sistema.window_init() # Inicializa o programa
